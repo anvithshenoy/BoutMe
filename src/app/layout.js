@@ -1,5 +1,6 @@
 import { Inter, Syne } from "next/font/google";
 import Footer from "./components/footer";
+import Loader from "./components/Loader/Loader";
 import { BackgroundBeams } from "./components/ui/background-beams";
 import "./globals.css";
 
@@ -31,6 +32,7 @@ const RootLayout = ({ children }) => {
       <body
         className={`${head.variable} ${body.variable} relative flex h-svh w-svw flex-col items-center justify-center bg-background px-2.5 py-3 font-body text-foreground antialiased transition-colors duration-300 ease-linear`}
       >
+        <Loader />
         <BackgroundBeams />
         {children}
         <Footer />
