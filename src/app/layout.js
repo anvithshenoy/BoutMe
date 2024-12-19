@@ -1,8 +1,9 @@
 import { Inter, Syne } from "next/font/google";
+import Footer from "./components/footer";
 import { BackgroundBeams } from "./components/ui/background-beams";
 import "./globals.css";
 
-const name = process.env.USER_NAME ?? "Username";
+const name = process.env.USER_NAME ?? "Your Name";
 
 const head = Syne({
   variable: "--font-head",
@@ -28,11 +29,11 @@ const RootLayout = ({ children }) => {
         <title>{metadata.title}</title>
       </head>
       <body
-        className={`${head.variable} ${body.variable} font-body relative flex h-dvh w-dvw flex-col items-center justify-center bg-background px-1.5 py-1 text-foreground antialiased transition-colors duration-300 ease-linear`}
+        className={`${head.variable} ${body.variable} relative flex h-svh w-svw flex-col items-center justify-center bg-background px-2.5 py-3 font-body text-foreground antialiased transition-colors duration-300 ease-linear`}
       >
         <BackgroundBeams />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
