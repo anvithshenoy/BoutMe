@@ -1,12 +1,19 @@
 "use client";
+import NumberFlow from "@number-flow/react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const Preloader = ({ progress }) => {
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [dimension, setDimension] = useState({ width: 1920, height: 1080 }); // Default dimensions for SSR
 
   useEffect(() => {
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
+    const updateDimensions = () => {
+      setDimension({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    updateDimensions(); // Initialize on mount
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height + 300} 0 ${dimension.height} L0 0`;
@@ -29,45 +36,37 @@ const Preloader = ({ progress }) => {
       initial="initial"
       exit="exit"
       data-click="true"
-      className="fixed right-0 top-0 z-[999] flex h-dvh w-dvw items-center justify-center bg-foreground"
+      className="fixed right-0 top-0 z-[999] flex h-dvh w-dvw items-center justify-center overflow-hidden bg-slate-400"
     >
-      {dimension.width > 0 && (
-        <>
-          {/* Progress Percentage */}
-          <motion.p
+      <>
+        {/* Progress Percentage */}
+        <div className="number-flow-container absolute z-10 flex items-center justify-center font-head text-7xl text-background">
+          <NumberFlow format={{ style: "percent" }} value={progress} />
+        </div>
+        {/* <motion.p
             variants={opacity}
             initial="initial"
             animate="enter"
             className="absolute z-10 flex items-center font-head text-7xl text-background"
           >
             {progress}%
-          </motion.p>
-          {/* Animated Path */}
-          <svg className="absolute top-0 h-[calc(100%+300px)] w-full">
-            <motion.path
-              variants={curve}
-              initial="initial"
-              exit="exit"
-              className="bg-foreground fill-foreground"
-            ></motion.path>
-          </svg>
-        </>
-      )}
+          </motion.p> */}
+
+        {/* Animated Path */}
+        <svg className="absolute top-0 min-h-[120vh] w-full">
+          <motion.path
+            variants={curve}
+            initial="initial"
+            exit="exit"
+            className="fill-slate-400"
+          />
+        </svg>
+      </>
     </motion.div>
   );
 };
 
 export default Preloader;
-
-export const opacity = {
-  initial: {
-    opacity: 0,
-  },
-  enter: {
-    opacity: 1,
-    transition: { duration: 1, delay: 0.2 },
-  },
-};
 
 export const slideUp = {
   initial: {

@@ -1,24 +1,12 @@
 import Link from "next/link";
 
 const links = [
-  {
-    application: "LinkedIn",
-    target: process.env.LINKEDIN_PROFILE,
-    errMsg: "{Missing: LinkedIn Link}",
-  },
-  {
-    application: "GitHub",
-    target:
-      process.env.GITHUB_USERNAME &&
-      `https://github.com/${process.env.GITHUB_USERNAME}/`,
-    errMsg: "{Missing: GitHub Username}",
-  },
-  ...(process.env.OTHERS_NAME && process.env.OTHERS_LINK
-    ? JSON.parse(process.env.OTHERS_NAME)
-        .slice(0, 2)
+  ...(process.env.SOCIALS_NAME && process.env.SOCIALS_LINK
+    ? JSON.parse(process.env.SOCIALS_NAME)
+        .slice(0, 4)
         .map((name, index) => ({
           application: name,
-          target: JSON.parse(process.env.OTHERS_LINK)[index],
+          target: JSON.parse(process.env.SOCIALS_LINK)[index],
           errMsg: `Missing: ${name} Link`,
         }))
     : []),
@@ -33,7 +21,7 @@ const QuickLinks = () => {
           href={link?.target ?? `https://${link.application}.com/`}
           target="_blank"
           rel="noreferrer noopener"
-          className="origin-left text-xl capitalize transition-colors duration-300 ease-in-out hover:text-blue-500"
+          className="origin-left text-xl capitalize outline-none transition-colors duration-300 ease-in-out hover:text-blue-500 focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
         >
           {link?.target ? link.application : link?.errMsg}
         </Link>

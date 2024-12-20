@@ -39,7 +39,7 @@ const Loader = () => {
 
   return (
     <AnimatePresence mode="wait">
-      {isVisible && <Preloader progress={Math.round(progress)} />}
+      {isVisible && <Preloader progress={progress / 100} />}
     </AnimatePresence>
   );
 };

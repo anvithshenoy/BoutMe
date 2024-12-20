@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "./components/footer";
 import QuickLinks from "./components/ui/quick-links";
 
 const name = process.env.USER_NAME ?? "{Your Name}";
@@ -35,7 +36,7 @@ const Home = () => {
                 href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block align-middle capitalize before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-blue-500 before:transition-all before:duration-300 hover:before:w-full"
+                className="relative inline-block align-middle capitalize outline-none before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-blue-500 before:transition-all before:duration-300 hover:before:w-full focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
               >
                 my resume
               </Link>
@@ -56,7 +57,7 @@ const Home = () => {
                 href={`mailto:${mailId}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block align-middle capitalize before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-blue-500 before:transition-all before:duration-300 hover:before:w-full"
+                className="relative inline-block align-middle capitalize outline-none before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-blue-500 before:transition-all before:duration-300 hover:before:w-full focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
               >
                 Have a Chat
               </Link>
@@ -65,6 +66,7 @@ const Home = () => {
         </div>
       </main>
       <QuickLinks />
+      <Footer />
     </>
   );
 };

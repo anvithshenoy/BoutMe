@@ -72,10 +72,6 @@ All personal data such as links, names, and contact details are dynamically rend
    OTHERS_LINK='["https://dribbble.com/dribbble/", "https://instagram.com/instagram/"]'  # Direct URLs to these platforms
    ```
 
-   ```
-
-   ```
-
 ### Run the Project
 
 To start the development server:
