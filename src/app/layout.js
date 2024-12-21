@@ -1,10 +1,12 @@
 import { Inter, Syne } from "next/font/google";
-import Footer from "./components/footer";
 import Loader from "./components/Loader/Loader";
 import { BackgroundBeams } from "./components/ui/background-beams";
 import "./globals.css";
 
-const name = process.env.USER_NAME ?? "Your Name";
+const name = process.env.USER_NAME ?? "{Your Name}";
+const description =
+  process.env.DESCRIPTION ??
+  "{Describe yourself. (Suggestion: Max. 2 lines. Keep it simple. )}";
 
 const head = Syne({
   variable: "--font-head",
@@ -18,7 +20,7 @@ const body = Inter({
 
 export const metadata = {
   title: `${name} • Portfolio`,
-  description: `Single Page Portfolio by ${name}`,
+  description: `Single Page Portfolio by ${name}. ${description}`,
 };
 
 const RootLayout = ({ children }) => {
@@ -35,7 +37,6 @@ const RootLayout = ({ children }) => {
         <Loader />
         <BackgroundBeams />
         {children}
-        <Footer />
       </body>
     </html>
   );

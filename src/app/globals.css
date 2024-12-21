@@ -6,12 +6,3 @@
   --background: #0a0a0a;
   --foreground: #ededed;
 }
-
-.quick-links {
-  /* Fallback for browsers that do not support 'sideways-lr' or 'sideways-rl' */
-  writing-mode: vertical-lr; /* This ensures text is displayed vertically, left to right */
-
-  /* For modern browsers that support 'sideways-lr' and 'sideways-rl' */
-  /* 'sideways-lr' rotates text 90 degrees, making it sideways, left-to-right */
-  writing-mode: sideways-lr;
-}
