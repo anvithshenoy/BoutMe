@@ -1,7 +1,7 @@
+import Footer from "@/components/footer";
+import QuickLinks from "@/components/ui/quick-links";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "./components/footer";
-import QuickLinks from "./components/ui/quick-links";
 
 const name = process.env.USER_NAME ?? "{Your Name}";
 const description =

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const Preloader = ({ progress }) => {
-  const [dimension, setDimension] = useState({ width: 1920, height: 1080 }); // Default dimensions for SSR
+  const [dimension, setDimension] = useState({ width: 1920, height: 1080 });
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -40,17 +40,9 @@ const Preloader = ({ progress }) => {
     >
       <>
         {/* Progress Percentage */}
-        <div className="number-flow-container absolute z-10 flex items-center justify-center font-head text-7xl text-background">
+        <div className="number-flow-container absolute z-10 flex items-center justify-center font-head text-7xl text-background [font-variant-numeric:tabular-nums]">
           <NumberFlow format={{ style: "percent" }} value={progress} />
         </div>
-        {/* <motion.p
-            variants={opacity}
-            initial="initial"
-            animate="enter"
-            className="absolute z-10 flex items-center font-head text-7xl text-background"
-          >
-            {progress}%
-          </motion.p> */}
 
         {/* Animated Path */}
         <svg className="absolute top-0 min-h-[120vh] w-full">
