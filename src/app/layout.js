@@ -1,6 +1,7 @@
+import Loader from "@/components/Loader/Loader";
+import TransitionProvider from "@/components/transition/TransitionProvider";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Inter, Syne } from "next/font/google";
-import Loader from "./components/Loader/Loader";
-import { BackgroundBeams } from "./components/ui/background-beams";
 import "./globals.css";
 
 const name = process.env.USER_NAME ?? "{Your Name}";
@@ -36,7 +37,7 @@ const RootLayout = ({ children }) => {
       >
         <Loader />
         <BackgroundBeams />
-        {children}
+        <TransitionProvider>{children}</TransitionProvider>
       </body>
     </html>
   );
