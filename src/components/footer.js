@@ -7,7 +7,8 @@ const Footer = () => {
       <div>
         <p>
           <span className="align-top text-blue-500">*</span>A very passionate{" "}
-          {role} open to offers & internship.
+          <span className="capitalize">{role}</span> open to offers &
+          internship.
         </p>
         {/* <p>
           <span className="align-top text-blue-500">**</span>Hover on the text.

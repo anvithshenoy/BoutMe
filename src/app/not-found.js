@@ -23,9 +23,9 @@ const Error404 = () => {
       </p>
       <Link
         href="/"
-        className="relative mt-10 inline-flex items-center justify-center gap-2 overflow-hidden rounded-md border px-2.5 py-1 font-head text-xl outline-none hover:ring-2 hover:ring-foreground hover:ring-offset-2 hover:ring-offset-background focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+        className="relative mt-10 inline-flex items-center justify-center gap-2 overflow-hidden rounded-md border px-2.5 py-1 font-head text-xl outline-hidden hover:ring-2 hover:ring-foreground hover:ring-offset-2 hover:ring-offset-background focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
       >
-        <span className="absolute inset-0 -translate-x-full transform animate-shimmer bg-gradient-to-r from-transparent via-foreground to-transparent opacity-50 delay-500" />
+        <span className="absolute inset-0 -translate-x-full transform animate-shimmer bg-linear-to-r from-transparent via-foreground to-transparent opacity-50 delay-500" />
         <IoHomeOutline /> <span className="relative">Go to Home</span>
       </Link>
     </>

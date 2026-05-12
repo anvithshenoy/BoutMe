@@ -24,7 +24,7 @@ export const metadata = {
   description: `Single Page Portfolio by ${name}. ${description}`,
 };
 
-const RootLayout = ({ children }) => {
+function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
@@ -33,7 +33,7 @@ const RootLayout = ({ children }) => {
         <title>{metadata.title}</title>
       </head>
       <body
-        className={`${head.variable} ${body.variable} relative flex h-svh w-svw flex-col items-center justify-center bg-background px-2.5 py-3 font-body text-foreground antialiased transition-colors duration-300 ease-linear`}
+        className={`${head.variable} ${body.variable} bg-background font-body text-foreground relative flex h-svh w-svw flex-col items-center justify-center px-2.5 py-3 antialiased transition-colors duration-300 ease-linear`}
       >
         <Loader />
         <BackgroundBeams />
@@ -41,6 +41,6 @@ const RootLayout = ({ children }) => {
       </body>
     </html>
   );
-};
+}
 
 export default RootLayout;

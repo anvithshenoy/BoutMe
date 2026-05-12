@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import { useCallback, useEffect, useState } from "react";
 import Preloader from "./Preloader";
 

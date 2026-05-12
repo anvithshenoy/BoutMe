@@ -1,6 +1,6 @@
 "use client";
 import NumberFlow from "@number-flow/react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 const Preloader = ({ progress }) => {
@@ -36,7 +36,7 @@ const Preloader = ({ progress }) => {
       initial="initial"
       exit="exit"
       data-click="true"
-      className="fixed right-0 top-0 z-[999] flex h-dvh w-dvw items-center justify-center overflow-hidden bg-slate-400"
+      className="fixed right-0 top-0 z-999 flex h-dvh w-dvw items-center justify-center overflow-hidden bg-slate-400"
     >
       <>
         {/* Progress Percentage */}
